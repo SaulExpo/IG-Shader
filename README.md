@@ -18,6 +18,7 @@ Para esta práctica se optó por desarrollar un shader generativo en el editor d
 ## Motivación y surgimiento del shader
 
 A la hora de empezar a desarrollar el shader la idea principal fue desarrollar algo que pareciera 3D y en forma de anillo, siguiendo un poco la siguiente idea:
+
 <img width="532" height="437" alt="image" src="https://github.com/user-attachments/assets/65dd2c52-fb83-4ce6-a5b6-317489a51ae5" />
 
 No obstante durante el desarrollo surfieron nuevas ideas y cambios en el proyecto
@@ -64,11 +65,13 @@ En este punto ya se empezó planteando una función para crear cada par de anill
 ```
 
 Tras acabar el resultado fue el siguiente:
+
 <img width="459" height="346" alt="image" src="https://github.com/user-attachments/assets/24857ff4-98a0-4db3-90f9-fb54d65d0f85" />
 
 ### 3. Aleatoriedad y relleno de pantalla
 
 Una vez visto los anillos me vino a la mente la siguiente ilusión optica que me propuso la idea de hacer que los anillos giren y se rellene la pantalla con ellos, pareciéndose al efecto que esta produce:
+
 <img width="300" height="250" alt="image" src="https://github.com/user-attachments/assets/dcf941d7-c864-45f7-b40c-ad241d0ff034" />
 
 Para ello acabé de desarrollar la función de `ring()` la cual es el núcleo visual del shader.  
@@ -222,6 +225,10 @@ return col*alpha;
 float alpha = clamp(a1+a2,0.0,1.0);
 return col*alpha;
 
+Al acabar, se obtuvo el siguiente resultado:
+
+<img width="558" height="591" alt="image" src="https://github.com/user-attachments/assets/dbef9c06-a3d2-4041-bdec-a97e18c083d0" />
+
 ## Muestra Final
 
 Para acabar y añadir un mejor efecto, se decidió añadir un efecto de desplazamiento en los ejes x e y para dar sensación de respirar, asi como crear todos los anillos para que se posicionen direcamente en un grid de la siguiente manera:
@@ -273,13 +280,16 @@ vec2 uv = (gl_FragCoord.xy - 0.5*u_resolution) / u_resolution.y;
 ```
 
 El resultado del shader se ve en el siguiente gif:
+
 ![chrome_2SYvNMYMZF](https://github.com/user-attachments/assets/e06477ac-00bb-4ae1-90c8-50cea664765d)
 
 ---
 
 ## Versión TinyCode
 
-Para desarrollar una version tinyCode se ha preparado lo siguiente:
+Para desarrollar una version tinyCode ajustándose a lo que pide la entrega, también se ha desarrollado dicha versión que se encuentra subida al repositorio. El resultado para que pudiera ajustarse a los 512Bytes se asemeja al realizado en la primera versión del proyecto
+
+<img width="532" height="437" alt="image" src="https://github.com/user-attachments/assets/65dd2c52-fb83-4ce6-a5b6-317489a51ae5" />
 
 
 Saúl Expósito Morales
