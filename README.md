@@ -289,7 +289,7 @@ El resultado del shader se ve en el siguiente gif:
 
 Para desarrollar una version tinyCode ajustándose a lo que pide la entrega, también se ha desarrollado dicha versión que se encuentra subida al repositorio. El resultado para que pudiera ajustarse a los 512Bytes se asemeja al realizado en la primera versión del proyecto
 
-<img width="532" height="437" alt="image" src="https://github.com/user-attachments/assets/65dd2c52-fb83-4ce6-a5b6-317489a51ae5" />
+<img width="376" height="387" alt="image" src="https://github.com/user-attachments/assets/a14337ae-1b14-460b-92cb-2479cbda51a6" />
 
 
 Saúl Expósito Morales
