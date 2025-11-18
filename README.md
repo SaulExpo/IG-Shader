@@ -21,13 +21,13 @@ A la hora de empezar a desarrollar el shader la idea principal fue desarrollar a
 
 <img width="532" height="437" alt="image" src="https://github.com/user-attachments/assets/65dd2c52-fb83-4ce6-a5b6-317489a51ae5" />
 
-No obstante durante el desarrollo surfieron nuevas ideas y cambios en el proyecto
+No obstante, durante el desarrollo surgieron nuevas ideas y cambios en el proyecto
 ---
 
 ## Versiones del desarrollo
 
 ### 1. Círculo Entrelazado
-Para empezar el proyecto creé un circulo simple con valores definidos que se constituía de 2 anillos que se entrelazaban y ocupaban toda la pantalla. 
+Para empezar el proyecto creé un círculo simple con valores definidos que se constituía de 2 anillos que se entrelazaban y ocupaban toda la pantalla. 
 Además se le añadían colores diferentes a cada uno de los anillos para que se viera de mejor manera.
 
 Esta fue la versión con la que se empezó a trabajar y se usó como base para pensar en ideas posteriores. Este fue el resultado de dicha idea:
@@ -36,11 +36,11 @@ Esta fue la versión con la que se empezó a trabajar y se usó como base para p
 
 ### 2. Anillos olímpicos
 
-Visto el anillo se me ocurrió la idea de hacer en lugar de solo un círculo, añadir 5 formando la figura de los anillos olímpicos e intentar hacer algo con ellos.
+Visto el anillo, se me ocurrió la idea de hacer en lugar de solo un círculo, añadir 5 formando la figura de los anillos olímpicos e intentar hacer algo con ellos.
 
 <img width="200" height="150" alt="image" src="https://github.com/user-attachments/assets/bde5e77d-064e-4a43-bc9e-e022f7ef7957" />
 
-En este punto ya se empezó planteando una función para crear cada par de anillos (función `ring()` que se explicará mas adelante) pero las posiciones de estos eran puestas a mano con el siguiente código:
+En este punto ya se empezó planteando una función para crear cada par de anillos (función `ring()` que se explicará más adelante) pero las posiciones de estos eran puestas a mano con el siguiente código:
 
 ```
     vec3 col = vec3(0.03,0.04,0.08);
@@ -70,7 +70,7 @@ Tras acabar el resultado fue el siguiente:
 
 ### 3. Aleatoriedad y relleno de pantalla
 
-Una vez visto los anillos me vino a la mente la siguiente ilusión optica que me propuso la idea de hacer que los anillos giren y se rellene la pantalla con ellos, pareciéndose al efecto que esta produce:
+Una vez visto los anillos me vino a la mente la siguiente ilusión óptica que me propuso la idea de hacer que los anillos giren y se rellene la pantalla con ellos, pareciéndose al efecto que esta produce:
 
 <img width="300" height="250" alt="image" src="https://github.com/user-attachments/assets/dcf941d7-c864-45f7-b40c-ad241d0ff034" />
 
@@ -173,7 +173,7 @@ a1 = mix(a1,a1*(1.0-overlap*(1.0-topIs1)*(1.0-shadow)),1.0);
 a2 = mix(a2,a2*(1.0-overlap*(topIs1)*(1.0-shadow)),1.0);
 ```
 Si z1 > z2, la banda 1 está delante.
-Cuando las dos bandas coinciden, una queda por debajo, recibe sombra y sse atenúa su alpha para crear el efecto trenzado.
+Cuando las dos bandas coinciden, una queda por debajo, recibe sombra y se atenúa su alpha para crear el efecto trenzado.
 
 #### 9. Iluminación difusa simulada
 
@@ -192,7 +192,7 @@ Se generan normales 3D sintetizadas a partir del ángulo y la altura.
 vec3 c1 = colA*(0.25+0.75*diff1);
 vec3 c2 = colB*(0.25+0.75*diff2);
 ```
-Combina el color aleatorio con la iluminación difusa,
+Combina el color aleatorio con la iluminación difusa.
 
 #### 11. Composición de bandas superior e inferior
 
@@ -222,16 +222,13 @@ Añade un brillo puntual que simula material metálico o plástico.
 float alpha = clamp(a1+a2,0.0,1.0);
 return col*alpha;
 ```
-float alpha = clamp(a1+a2,0.0,1.0);
-return col*alpha;
-
 Al acabar, se obtuvo el siguiente resultado:
 
 <img width="558" height="591" alt="image" src="https://github.com/user-attachments/assets/dbef9c06-a3d2-4041-bdec-a97e18c083d0" />
 
 ## Muestra Final
 
-Para acabar y añadir un mejor efecto, se decidió añadir un efecto de desplazamiento en los ejes x e y para dar sensación de respirar, asi como crear todos los anillos para que se posicionen direcamente en un grid de la siguiente manera:
+Para acabar y añadir un mejor efecto, se decidió añadir un efecto de desplazamiento en los ejes x e y para dar sensación de respirar, así como crear todos los anillos para que se posicionen directamente en un grid de la siguiente manera:
 
 ```
 vec2 uv = (gl_FragCoord.xy - 0.5*u_resolution) / u_resolution.y;
@@ -287,7 +284,7 @@ El resultado del shader se ve en el siguiente gif:
 
 ## Versión TinyCode
 
-Para desarrollar una version tinyCode ajustándose a lo que pide la entrega, también se ha desarrollado dicha versión que se encuentra subida al repositorio. El resultado para que pudiera ajustarse a los 512Bytes se asemeja al realizado en la primera versión del proyecto
+Para desarrollar una versión TinyCode ajustándose a lo que pide la entrega, también se ha desarrollado dicha versión que se encuentra subida al repositorio. El resultado para que pudiera ajustarse a los 512 Bytes se asemeja al realizado en la primera versión del proyecto
 
 <img width="376" height="387" alt="image" src="https://github.com/user-attachments/assets/a14337ae-1b14-460b-92cb-2479cbda51a6" />
 
